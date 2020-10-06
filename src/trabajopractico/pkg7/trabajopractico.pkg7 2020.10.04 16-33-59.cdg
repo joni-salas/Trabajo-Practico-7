@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="trabajopractico.pkg7">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="trabajopractico.pkg7" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ciudad"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="long" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDni" returnType="long" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="getCiudad" returnType="String" visibility="public"/>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="long" name="dni"/>
+        </Method>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="setCiudad" returnType="void" visibility="public">
+          <Argument type="String" name="ciudad"/>
+        </Method>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DirectorioTelefonico" package="trabajopractico.pkg7" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="listaClientes" type="TreeMap&lt;Long, Cliente&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="agregarCliente" returnType="void" visibility="public">
+          <Argument type="long" name="tel"/>
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="buscarCliente" returnType="Cliente" visibility="public">
+          <Argument type="long" name="tel"/>
+        </Method>
+        <Method name="buscarTelefono" returnType="Set&lt;Long&gt;" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="buscarClientes" returnType="List&lt;Cliente&gt;" visibility="public">
+          <Argument type="String" name="ciudad"/>
+        </Method>
+        <Method name="borrarCliente" returnType="void" visibility="public">
+          <Argument type="long" name="dni"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrabajoPractico7" package="trabajopractico.pkg7" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="listaClientes" source="trabajopractico.pkg7.DirectorioTelefonico" target="trabajopractico.pkg7.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="TreeMap&lt;Long, Cliente&gt;"/>
+    <UseRelation source="trabajopractico.pkg7.DirectorioTelefonico" target="trabajopractico.pkg7.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
